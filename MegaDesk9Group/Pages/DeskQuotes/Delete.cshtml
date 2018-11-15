@@ -33,11 +33,16 @@
         <dt>
             @Html.DisplayNameFor(model => model.DeskQuote.RushOrder)
         </dt>
-        <dd>
-            @Html.DisplayFor(model => model.DeskQuote.RushOrder)
-        </dd>
+        @if (@Model.DeskQuote.RushOrder == null)
+        {
+            <dd>No</dd>
+        }
+        else
+        {
+            <dd>@Html.DisplayFor(model => model.DeskQuote.RushOrder) Days</dd>
+        }
         <dt>
-            @Html.DisplayNameFor(model => model.DeskQuote.Width)
+        @Html.DisplayNameFor(model => model.DeskQuote.Width)
         </dt>
         <dd>
             @Html.DisplayFor(model => model.DeskQuote.Width)

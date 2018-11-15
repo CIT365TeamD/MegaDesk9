@@ -15,6 +15,7 @@ namespace MegaDesk9Group.Models
         Veneer = 125
 
     }
+
     public class DeskQuote
     {
         #region memberVariables
