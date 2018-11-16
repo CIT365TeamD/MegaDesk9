@@ -18,7 +18,7 @@ namespace MegaDesk9Group.Pages.DeskQuotes
             _context = context;
         }
 
-        public DeskQuote DeskQuote { get; set; }
+        public DeskQuote Quote { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -27,12 +27,13 @@ namespace MegaDesk9Group.Pages.DeskQuotes
                 return NotFound();
             }
 
-            DeskQuote = await _context.DeskQuote.FirstOrDefaultAsync(m => m.ID == id);
+            Quote = await _context.DeskQuote.FirstOrDefaultAsync(m => m.ID == id);
 
-            if (DeskQuote == null)
+            if (Quote == null)
             {
                 return NotFound();
             }
+
             return Page();
         }
     }

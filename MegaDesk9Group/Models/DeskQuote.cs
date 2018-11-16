@@ -70,6 +70,37 @@ namespace MegaDesk9Group.Models
                 return CalculateQuotePrice();
             }
                 }
+        [Display(Name ="Base Price")]
+        public int BasePrice
+        {
+            get
+            {
+                return SurfaceAreaCost();
+            }
+        }
+        [Display(Name ="Rush Cost")]
+        public int RushCost
+        {
+            get
+            {
+                return RushFee();
+            }
+        }
+        [Display(Name ="x $50 each")]
+        public int DrawerTotal
+        {
+            get
+            {
+                return DrawerCost();
+            }
+        }
+        public int MaterialFee
+        {
+            get
+            {
+                return (int)SurfaceMaterial;
+            }
+        }
        
         #endregion
 
@@ -114,7 +145,7 @@ namespace MegaDesk9Group.Models
         // calculate quote price
         public int CalculateQuotePrice()
         {
-            int quotePrice = PRICE_BASE + SurfaceAreaCost() + DrawerCost() + (int)SurfaceMaterial + RushFee();
+            int quotePrice = SurfaceAreaCost() + DrawerCost() + (int)SurfaceMaterial + RushFee();
             return quotePrice;
         }
 
@@ -125,11 +156,11 @@ namespace MegaDesk9Group.Models
             if (SurfaceArea > BASE_SIZE)
             {
                 int surfaceCost = (SurfaceArea - BASE_SIZE) * PRICE_SQ_FT;
-                return surfaceCost;
+                return surfaceCost + PRICE_BASE;
             }
             else
             {
-                return 0;
+                return PRICE_BASE;
             }
         }
 

@@ -1,8 +1,25 @@
-/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification 
-for details on configuring this project to bundle and minify static web assets. */
 body {
-    padding-top: 50px;
+    font-family: "Open Sans", sans-serif;
+    font-size: 16px;
     padding-bottom: 20px;
+    padding-top: 50px;
+    position: relative;
+    background-color: #f7f6e7;
+    color: #58433b;
+}
+
+main {
+    height: 100%;
+    
+
+}
+hr {
+    border-top: 1px #4e9b9a solid ;
+
+}
+footer {
+    margin: -20px 0;
+    padding: 40px 20px 20px 20px;
 }
 
 /* Wrapping element */
@@ -12,26 +29,234 @@ body {
     padding-right: 15px;
 }
 
-/* Carousel */
-.carousel-caption p {
-    font-size: 20px;
-    line-height: 1.4;
+#nav {
+    background-color: #785b51;
+    border: none;
 }
 
-/* Make .svg files in the carousel display properly in older browsers */
-.carousel-inner .item img[src$=".svg"] {
+    #nav .navbar-brand {
+        color: #d6d8df;
+    }
+
+        #nav .navbar-brand:hover {
+            color: #ffffff;
+        }
+
+        #nav .navbar-brand:active {
+            color: #f2e3c0;
+        }
+
+    #nav .navbar-nav .nav-button .nav-a:link, #nav .navbar-nav .nav-button .nav-a:visited {
+        color: #d6d8df;
+    }
+.navbar-inverse .navbar-nav > li > a {
+    color: #d6d8df;
+}
+a:hover, a:focus {
+    text-decoration: none;
+
+}
+
+#nav .navbar-nav .nav-button .nav-a:hover {
+    color: #ffffff;
+}
+
+    #nav .navbar-nav .nav-button .nav-a:active {
+        color: #decebe;
+    }
+
+h2 {
+    margin-bottom: 25px;
+    color: #58433b;
+}
+    h2 a {
+        color: #58433b;
+    }
+a h2:hover {
+    color: #785b51;
+}
+.home {
+    position: relative;
+}
+.imgBox {
+    margin-top:0;
+    padding-top: 100vh;
     width: 100%;
+    background-image: url(../images/desk3.png);
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
-/* QR code generator */
-#qrCode {
-    margin: 15px;
+form {
+    font-size: 16px;
+    margin-top: 25px;
 }
 
+    form input, form .form-control {
+        border-radius: 2px;
+        border-style: solid;
+        border-width: 1px;
+        border-color: gray;
+        padding: 5px;
+    }
+
+    form select {
+        border-radius: 2px;
+        padding: 5px;
+    }
+
+.filter {
+    margin-left: 8px;
+}
+
+.table {
+    border: 1px solid #decebe;
+    margin-top: 25px;
+    background-color: white;
+}
+
+thead {
+    background-color: #e0d7d2;
+}
+
+th {
+    color: #58433b;
+}
+
+    th a {
+        color: #785b51;
+        text-decoration: underline;
+    }
+
+
+.bookColumn {
+    width: 150px;
+}
+
+.noteColumn {
+    width: 50%;
+}
+
+
+main a {
+    color: #4e9b9a;
+    text-decoration: none;
+}
+
+    main a:hover {
+        color: #59424a;
+       
+    }
+    main a:active {
+        color: white;
+    }
+    .button2 {
+        margin-top: -4px;
+    }
+th a {
+    color: #58433b;
+    text-decoration: underline;
+}
+th a:hover {
+    color: #785b51;
+
+}
+    .button {
+    background-color: #785b51;
+    color: #ffffff;
+    border: none;
+    padding: 7px 10px;
+    width: auto;
+}
+
+    .button:hover {
+        text-decoration: none;
+        background-color: #bb9e8e;
+        color: #58433b;
+    }
+    .button3 {
+        margin-left: 5px;
+    }
+.radio {
+    white-space: nowrap;
+    display: inline-block;
+    width: 127px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.radio img {
+    float:right;
+}
+        .radio input[type='radio'], .radio-inline input[type='radio'] {
+            
+            padding: 5px;
+            margin-top: 4px;
+            position: initial;
+        }
+.create {
+    margin-top: 20px;
+    margin-left: -1px;
+    border-radius: 2px;
+
+}
+.homeButtons {
+    display: flex;
+    flex-flow: wrap;
+    justify-content: space-around;
+    background-color: white;
+    background-color: rgba(255,255,255,0.5);
+    margin-top: -220px;
+    padding: 30px 0;
+}
+
+
+.detailsTable {
+    max-width: 600px;
+
+}
+.detailsTable tr td:nth-child(2), .detailsTable tr th:nth-child(1) {
+    border-right: solid 1px #d6d8df;
+}
+.detailsHead {
+    width: 50%;
+}
+.detailsTable tr:nth-child(3), .detailsTable tr:nth-child(7)  {
+   background-color: #f5f5ee;
+}
+.detailsTable tr td:nth-child(2n) {
+    text-align: right;
+    padding-right: 20px;
+}
+fieldset {
+    min-width: 280px;
+    width: 50%;
+    float: left;
+    padding: 0 20px;
+}
+.oak {
+    background-image: url(../images/oak.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: right;
+}
+@media screen and (max-width: 500px) {
+
+
+
+    .image {
+        width: 800px;
+    }
+}
 /* Hide/rearrange for smaller screens */
-@media screen and (max-width: 767px) {
-    /* Hide captions */
-    .carousel-caption {
-        display: none;
+
+@media screen and (max-width: 600px) {
+
+
+    .image {
+        width: 100%;
+    }
+    fieldset {
+        width:100%;
     }
 }

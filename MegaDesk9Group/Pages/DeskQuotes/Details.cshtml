@@ -4,70 +4,141 @@
 @{
     ViewData["Title"] = "Details";
 }
+<main>
+    <h2>Details</h2>
 
-<h2>Details</h2>
+        <h4>Customer: @Html.DisplayFor(model => model.Quote.FullName)</h4>
+        <hr />
+        <table class="table detailsTable">
+            <thead>
+                <tr>
+                    <th colspan="2" class="detailsHead">
+                        Desk Specifications
+                    </th>
 
-<div>
-    <h4>DeskQuote</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.DeskQuote.FullName)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.DeskQuote.FullName)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.DeskQuote.QuoteDate)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.DeskQuote.QuoteDate)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.DeskQuote.QuoteAmount)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.DeskQuote.QuoteAmount)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.DeskQuote.RushOrder)
-        </dt>
-        @if (@Model.DeskQuote.RushOrder == null)
-        {
-            <dd>No</dd>
-        }
-        else
-        {
-            <dd>@Html.DisplayFor(model => model.DeskQuote.RushOrder) Days</dd>
-        }
+                    <th colspan="2" class="detailsHead">
+                        Price
+                    </th>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.DeskQuote.Width)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.DeskQuote.Width)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.DeskQuote.Depth)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.DeskQuote.Depth)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.DeskQuote.DrawerCount)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.DeskQuote.DrawerCount)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.DeskQuote.SurfaceMaterial)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.DeskQuote.SurfaceMaterial)
-        </dd>
-    </dl>
-</div>
-<div>
-    <a asp-page="./Edit" asp-route-id="@Model.DeskQuote.ID">Edit</a> |
-    <a asp-page="./Index">Back to List</a>
-</div>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        Desk @Html.DisplayNameFor(model => model.Quote.Width):
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => model.Quote.Width) in
+
+                    </td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>
+                        Desk @Html.DisplayNameFor(model => model.Quote.Depth):
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => model.Quote.Depth) in.
+
+                    </td>
+                    <td></td>
+                    <td></td>
+
+                </tr>
+                <tr>
+                    <td>
+                        Total Area:
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => model.Quote.SurfaceArea)  sq.in.
+
+                    </td>
+                    <td>
+                        @Html.DisplayNameFor(model => model.Quote.BasePrice):
+                    </td>
+                    <td>
+                        $@Html.DisplayFor(model => model.Quote.BasePrice)
+                    </td>
+
+                </tr>
+                <tr>
+                    <td>
+                        @Html.DisplayNameFor(model => model.Quote.DrawerCount):
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => model.Quote.DrawerCount)
+
+                    </td>
+                    <td>
+                        @Html.DisplayNameFor(model => model.Quote.DrawerTotal):
+                    </td>
+                    <td>
+                        $@Html.DisplayFor(model => model.Quote.DrawerTotal)
+                    </td>
+
+                </tr>
+                <tr>
+                    <td>
+                        @Html.DisplayNameFor(model => model.Quote.SurfaceMaterial):
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => model.Quote.SurfaceMaterial)
+
+                    </td>
+                    <td>
+                        @Html.DisplayNameFor(model => model.Quote.MaterialFee):
+                    </td>
+                    <td>
+                        $@Html.DisplayFor(model => model.Quote.MaterialFee)
+                    </td>
+
+                </tr>
+                <tr>
+                    <td>
+                        @Html.DisplayNameFor(model => model.Quote.RushOrder):
+                    </td>
+                    @if (@Model.Quote.RushOrder == null)
+                    {
+                        <td>No</td>
+                    }
+                    else
+                    {
+                        <td>@Html.DisplayFor(model => model.Quote.RushOrder) Days</td>
+                    }
+
+                    <td>
+                        @Html.DisplayNameFor(model => model.Quote.RushCost):
+                    </td>
+                    <td>
+                        $@Html.DisplayFor(model => model.Quote.RushCost)
+                    </td>
+
+                </tr>
+                <tr>
+                    <td>
+                        @Html.DisplayNameFor(model => model.Quote.QuoteDate):
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => model.Quote.QuoteDate)
+
+                    </td>
+                    <td>
+                        @Html.DisplayNameFor(model => model.Quote.QuoteAmount):
+                    </td>
+                    <td>
+                        $@Html.DisplayFor(model => model.Quote.QuoteAmount)
+                    </td>
+
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    <div>
+        <a asp-page="./Edit" asp-route-id="@Model.Quote.ID">Edit</a> |
+        <a asp-page="./Index">Back to List</a>
+    </div>
+</main>
